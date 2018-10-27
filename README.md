@@ -1,2 +1,2 @@
 # Web-Development
-code for web developing
+code for creating web projects and practices.
