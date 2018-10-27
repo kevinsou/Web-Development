@@ -29,15 +29,20 @@ function setGradient(){
 }
 
 function setReverse(){
-	body.style.background = "linear-gradient(to right, " + color2.value + "," +color1.value+")";
-	css.textContent = body.style.background + ";";
+	var holder = color1.value;
+	// color1.setAttribute("value", color2.value);
+	// color2.setAttribute("value", holder);
+	color1.value = color2.value;
+	color2.value = holder;
+	setGradient();
 }
 
-function setRandom(){
-	color1.setAttribute("value" ,"#"+ranFullColorHex());
-	color2.setAttribute("value" ,"#"+ranFullColorHex());
-	body.style.background = "linear-gradient(to right, "+ color1.value + "," +color2.value+")";
-	css.textContent = body.style.background + ";";
+function setRandom(event){
+	color1.value="#"+ranFullColorHex();
+	color2.value="#"+ranFullColorHex();
+	// color1.setAttribute("value" ,"#"+ranFullColorHex());
+	// color2.setAttribute("value" ,"#"+ranFullColorHex());
+	setGradient();
 }
 
 color1.addEventListener("input",setGradient);
